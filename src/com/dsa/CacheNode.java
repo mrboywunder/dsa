@@ -1,4 +1,4 @@
-package com.dsa;
+package src.dsa;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

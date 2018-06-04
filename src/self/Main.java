@@ -1,4 +1,4 @@
-package com.self;
+package src.self;
 
 public class Main {
 

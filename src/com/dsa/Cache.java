@@ -1,4 +1,4 @@
-package com.dsa;
+package src.dsa;
 
 public interface Cache<T> {
 

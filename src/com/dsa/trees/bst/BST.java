@@ -1,7 +1,7 @@
 package com.dsa.trees.bst;
 
-import com.dsa.trees.Node;
-import com.dsa.trees.binary.BinaryTree;
+import src.dsa.trees.Node;
+import src.dsa.trees.binary.BinaryTree;
 import lombok.Getter;
 import lombok.Setter;
 

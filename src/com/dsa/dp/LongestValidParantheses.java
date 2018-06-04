@@ -1,4 +1,4 @@
-package com.dsa.dp;
+package src.dsa.dp;
 
 import java.util.HashMap;
 import java.util.Objects;

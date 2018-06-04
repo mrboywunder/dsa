@@ -1,7 +1,7 @@
-package com.dsa.misc;
+package src.dsa.misc;
 
-import com.dsa.Cache;
-import com.dsa.CacheNode;
+import src.dsa.Cache;
+import src.dsa.CacheNode;
 
 public class LRUCache implements Cache<CacheNode> {
 

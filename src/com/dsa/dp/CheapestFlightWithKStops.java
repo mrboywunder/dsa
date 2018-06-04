@@ -1,8 +1,7 @@
-package com.dsa.dp;
+package src.dsa.dp;
 
-import com.dsa.trees.GenericTreeNode;
+import src.dsa.trees.GenericTreeNode;
 
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 

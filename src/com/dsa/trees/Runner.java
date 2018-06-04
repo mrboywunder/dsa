@@ -1,8 +1,9 @@
 package com.dsa.trees;
 
-import com.dsa.trees.bst.BST;
 import com.dsa.trees.bst.RecoverBst;
-import sun.reflect.generics.tree.Tree;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class Runner {
 
@@ -32,7 +33,37 @@ public class Runner {
 ////        System.out.println();
 //        traversals.levelOrder();
         Runner runner = new Runner();
-        runner.flattenBinaryTree();
+        runner.morrisInOrder();
+    }
+
+    private void morrisInOrder() {
+        TreeNode root = new TreeNode(3);
+        TreeNode five = new TreeNode(5);
+        TreeNode one = new TreeNode(1);
+        TreeNode eight = new TreeNode(8);
+        TreeNode seven = new TreeNode(7);
+
+        root.setLeft(five);
+        root.setRight(one);
+
+        one.setRight(eight);
+        eight.setLeft(seven);
+
+        final Map<Integer, TreeNode> parentMap = new HashMap<>();
+        parentMap.put(root.getVal(), null);
+        parentMap.put(five.getVal(), root);
+        parentMap.put(one.getVal(), root);
+        parentMap.put(eight.getVal(), one);
+        parentMap.put(seven.getVal(), eight);
+
+        MorrisInOrder morrisInOrder = new MorrisInOrder(parentMap);
+        morrisInOrder.inOrderRecursive(root);
+        System.out.println();
+        morrisInOrder.inOrder(root);
+
+        System.out.println(morrisInOrder.isChildOf(one, eight));
+        System.out.println(morrisInOrder.inOrderPredecessor(eight).getVal());
+        System.out.println(morrisInOrder.inOrderPredecessor(root, eight).getVal());
     }
 
     private void flattenBinaryTree() {

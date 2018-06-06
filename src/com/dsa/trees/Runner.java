@@ -33,7 +33,43 @@ public class Runner {
 ////        System.out.println();
 //        traversals.levelOrder();
         Runner runner = new Runner();
-        runner.morrisInOrder();
+        runner.zigZagTraversal();
+    }
+
+    private void zigZagTraversal() {
+        TreeNode three = new TreeNode(3);
+        TreeNode nine = new TreeNode(9);
+        TreeNode twenty = new TreeNode(20);
+        TreeNode fifteen = new TreeNode(15);
+        TreeNode seven = new TreeNode(7);
+
+        three.setLeft(nine);
+        three.setRight(twenty);
+
+        twenty.setLeft(fifteen);
+        twenty.setRight(seven);
+
+        ZigZagTraversal zigZagTraversal = new ZigZagTraversal();
+        zigZagTraversal.levelOrder(three);
+    }
+
+    private void identicalTrees() {
+        TreeNode one = new TreeNode(1);
+        TreeNode two = new TreeNode(2);
+        TreeNode three = new TreeNode(3);
+
+        two.setLeft(one);
+        two.setRight(three);
+
+        TreeNode oneCopy = new TreeNode(1);
+        TreeNode twoCopy = new TreeNode(2);
+        TreeNode threeCopy = new TreeNode(3);
+
+        twoCopy.setLeft(oneCopy);
+        twoCopy.setRight(threeCopy);
+
+        IdenticalTrees identicalTrees = new IdenticalTrees();
+        System.out.println(identicalTrees.isSameTree(two, twoCopy));
     }
 
     private void morrisInOrder() {

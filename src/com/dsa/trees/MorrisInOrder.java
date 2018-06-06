@@ -78,16 +78,8 @@ public class MorrisInOrder {
     }
 
     boolean isChildOf(TreeNode parent, TreeNode child) {
-
-        if (parent == null) {
-            return false;
-        }
-
-        if (parent.getVal() == child.getVal()) {
-            return true;
-        }
-
-        return isChildOf(parent.getLeft(), child) || isChildOf(parent.getRight(), child);
+        return parent != null && (parent.getVal() == child.getVal() || isChildOf(parent.getLeft(), child)
+                || isChildOf(parent.getRight(), child));
     }
 
     public void inOrder(TreeNode currentNode) {

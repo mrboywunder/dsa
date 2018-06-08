@@ -12,6 +12,7 @@ public class MergeKSortedLists {
 
 
         }
+        return null;
     }
 
     public ListNode mergeLists(ListNode a, ListNode b) {

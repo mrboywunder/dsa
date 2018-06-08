@@ -19,7 +19,6 @@ public class MergeKSortedLists {
             minNode = minNode.getNext();
             headers[minHeaderIndex] = minNode;
         }
-
         return head.getNext();
     }
 

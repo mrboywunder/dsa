@@ -8,30 +8,6 @@ import java.util.Map;
 public class Runner {
 
     public static void main(String[] args) {
-//        Node root = new Node(44, null, null, null);
-//        BST bst = new BST(root);
-//        bst.add(new Node(17));
-//        bst.add(new Node(88));
-//        bst.add(new Node(8));
-//        bst.add(new Node(5));
-//        bst.add(new Node(32));
-//        bst.add(new Node(28));
-//        bst.add(new Node(29));
-//        Node lastNode = new Node(93);
-//        bst.add(lastNode);
-//        bst.add(new Node(65));
-//        bst.add(new Node(47));
-//        bst.add(new Node(82));
-//        bst.add(new Node(76));
-//        bst.add(new Node(47));
-//
-//        lastNode.setLeft(new Node(1234));
-//        lastNode.setRight(new Node(1));
-//        bst.modifiedInOrder(root);
-//        Traversals traversals = new Traversals(bst);
-////        traversals.preOrder();
-////        System.out.println();
-//        traversals.levelOrder();
         Runner runner = new Runner();
         runner.zigZagTraversal();
     }

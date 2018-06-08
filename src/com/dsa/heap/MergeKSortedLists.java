@@ -4,30 +4,53 @@ import com.dsa.ListNode;
 
 public class MergeKSortedLists {
 
-    public ListNode mergeKLists(ListNode[] lists) {
-        ListNode retVal = new ListNode(-99);
-        ListNode head = retVal;
+    public ListNode mergeLists(ListNode... lists){
+        ListNode currentNode = new ListNode(-99999);
+        ListNode head = currentNode;
+        ListNode[] headers = new ListNode[lists.length];
 
-        for (ListNode node : lists) {
+        System.arraycopy(lists, 0, headers, 0, lists.length);
 
-
-        }
-    }
-
-    public ListNode mergeLists(ListNode a, ListNode b) {
-        ListNode retVal = new ListNode();
-
-        while (a != null && b != null) {
-            if (a.getVal() < b.getVal()) {
-                retVal.setNext(a);
-                a = a.getNext();
-            }
-            else {
-                retVal.setNext(b);
-                b = b.getNext();
-            }
+        while (this.findMin(headers) != -1) {
+            int minHeaderIndex = this.findMin(headers);
+            ListNode minNode = headers[minHeaderIndex];
+            currentNode.setNext(minNode);
+            currentNode = currentNode.getNext();
+            minNode = minNode.getNext();
+            headers[minHeaderIndex] = minNode;
         }
 
-        return null;
+        return head.getNext();
     }
+
+    public int findMin(ListNode[] arr) {
+        if (arr.length == 0) {
+            return -1;
+        }
+        ListNode min = arr[0];
+        int minIndex = 0;
+
+        for (int i = 0; i < arr.length; i++) {
+            ListNode node = arr[i];
+            if (node == null) {
+                continue;
+            }
+            if (min == null) {
+                min = node;
+                minIndex = i;
+            }
+            else if (node.getVal() < min.getVal()) {
+                min = node;
+                minIndex = i;
+            }
+        }
+
+        if (min == null) {
+            minIndex = -1;
+        }
+
+        return minIndex;
+    }
+
+
 }
